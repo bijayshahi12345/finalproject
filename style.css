@@ -142,3 +142,33 @@ form button {
   cursor: pointer;
   transition: background 0.3s;
 }
+
+form button:hover {
+  background: #218838;
+}
+
+#expense-list {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#expense-list li {
+  background: #f1f1f1;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-left: 5px solid #007BFF;
+  border-radius: 4px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
