@@ -74,3 +74,10 @@ function renderExpense(expense) {
   `;
   list.appendChild(li);
 }
+function deleteExpense(id) {
+  expenses = expenses.filter(item => item.id !== id);
+  localStorage.setItem('expenses', JSON.stringify(expenses));
+
+  const li = document.querySelector(`li[data-id="${id}"]`);
+  if (li) li.remove();
+}
