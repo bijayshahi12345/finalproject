@@ -52,3 +52,9 @@ function handleFormSubmit(e) {
     category,
     date
   };
+  
+  expenses.push(expense);
+  localStorage.setItem('expenses', JSON.stringify(expenses));
+  renderExpense(expense);
+  e.target.reset();
+}
