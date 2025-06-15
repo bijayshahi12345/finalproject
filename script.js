@@ -63,3 +63,14 @@ function showError(message) {
   errorDiv.textContent = message;
   errorDiv.style.color = 'red';
 }
+
+function renderExpense(expense) {
+  const list = document.getElementById('expense-list');
+  const li = document.createElement('li');
+  li.dataset.id = expense.id;
+  li.innerHTML = `
+    ₹${expense.amount} - <strong>${expense.category}</strong> on ${expense.date}
+    <button onclick="deleteExpense(${expense.id})">❌</button>
+  `;
+  list.appendChild(li);
+}
