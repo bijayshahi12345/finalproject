@@ -188,3 +188,15 @@ footer {
   nav ul {
     flex-direction: column;
   }
+    .hero h2 {
+    font-size: 2rem;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
