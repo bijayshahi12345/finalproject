@@ -172,3 +172,15 @@ form button:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+footer {
+  text-align: center;
+  background: #003366;
+  color: #fff;
+  padding: 15px 0;
+  margin-top: 40px;
+}
