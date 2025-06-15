@@ -56,3 +56,16 @@ function saveExpenseToStorage(expense) {
 function getExpensesFromStorage() {
   return JSON.parse(localStorage.getItem('expenses')) || [];
 }
+
+function loadExpensesFromStorage() {
+  const expenses = getExpensesFromStorage();
+  expenses.forEach(addExpenseToDOM);
+}
+
+function removeExpense(id) {
+  const expenses = getExpensesFromStorage().filter(exp => exp.id !== id);
+  localStorage.setItem('expenses', JSON.stringify(expenses));
+
+  const li = document.querySelector(`[data-id='${id}']`);
+  if (li) li.remove();
+}
