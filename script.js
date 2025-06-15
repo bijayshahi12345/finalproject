@@ -58,3 +58,8 @@ function handleFormSubmit(e) {
   renderExpense(expense);
   e.target.reset();
 }
+function showError(message) {
+  const errorDiv = document.getElementById('form-errors');
+  errorDiv.textContent = message;
+  errorDiv.style.color = 'red';
+}
