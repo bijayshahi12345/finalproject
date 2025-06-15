@@ -22,3 +22,33 @@ function loadExpensesFromStorage() {
     expenses.forEach(renderExpense);
   }
 }
+
+function setupEventListeners() {
+  const form = document.getElementById('expense-form');
+  form.addEventListener('submit', handleFormSubmit);
+}
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+    const amountInput = document.getElementById('amount');
+  const categoryInput = document.getElementById('category');
+  const dateInput = document.getElementById('date');
+  const errorDiv = document.getElementById('form-errors');
+
+  const amount = amountInput.value.trim();
+  const category = categoryInput.value.trim();
+  const date = dateInput.value.trim();
+
+  if (!amount || isNaN(amount) || !category || !date) {
+    showError("Please fill out all fields correctly.");
+    return;
+  }
+
+  errorDiv.textContent = '';
+
+  const expense = {
+    id: Date.now(),
+    amount: parseFloat(amount),
+    category,
+    date
+  };
