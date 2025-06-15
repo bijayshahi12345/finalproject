@@ -30,3 +30,29 @@ function handleFormSubmit(e) {
     category,
     date
   };
+ addExpenseToDOM(expense);
+  saveExpenseToStorage(expense);
+
+  e.target.reset();
+}
+
+function addExpenseToDOM(expense) {
+  const list = document.getElementById('expense-list');
+  const li = document.createElement('li');
+  li.dataset.id = expense.id;
+  li.innerHTML = `
+    ₹${expense.amount} - <strong>${expense.category}</strong> on ${expense.date}
+    <button class="delete-btn">X</button>
+  `;
+  li.querySelector('.delete-btn').addEventListener('click', () => removeExpense(expense.id));
+  list.appendChild(li);
+}
+function saveExpenseToStorage(expense) {
+  const expenses = getExpensesFromStorage();
+  expenses.push(expense);
+  localStorage.setItem('expenses', JSON.stringify(expenses));
+}
+
+function getExpensesFromStorage() {
+  return JSON.parse(localStorage.getItem('expenses')) || [];
+}
