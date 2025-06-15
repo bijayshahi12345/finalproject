@@ -103,3 +103,7 @@ nav a:hover {
   font-size: 1rem;
   transition: background 0.3s, transform 0.2s;
 }
+cta-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
